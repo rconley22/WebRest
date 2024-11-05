@@ -35,11 +35,12 @@ public partial class WebRestOracleContext : DbContext
     public virtual DbSet<ProductPrice> ProductPrices { get; set; }
 
     public virtual DbSet<ProductStatus> ProductStatuses { get; set; }
+    public object Address { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
-            .HasDefaultSchema("LAB3")
+            .HasDefaultSchema("UD_RCONLEY")
             .UseCollation("USING_NLS_COMP");
 
         modelBuilder.Entity<Address>(entity =>
